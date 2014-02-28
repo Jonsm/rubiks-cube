@@ -58,35 +58,6 @@ public class GameController : MonoBehaviour {
 		StartCoroutine ("Snap");
 		yield return Snap ();
 	}
-	
-	/*IEnumerator RotatePlane(Vector3 axis, int pos, string key) {
-		List<GameObject> toRotate = new List<GameObject> ();
-		foreach (GameObject cube in cubes) {
-			if (CubeIsOnPlane (axis, pos, cube)) {
-				toRotate.Add (cube);
-			}
-		}
-
-		while (Input.GetKey (key)) {
-			foreach (GameObject cube in toRotate) {
-				cube.transform.RotateAround (origin, axis, angle * Mathf.Min (increment, totalTime - turnTime) / totalTime);
-			}
-			turnTime+=Mathf.Min (increment, totalTime - turnTime);
-			yield return new WaitForSeconds(increment);
-		}
-		if (turnTime != 0) {
-			if (turnTime > totalTime / 2) {
-				foreach (GameObject cube in toRotate) {
-					cube.transform.RotateAround (origin, axis, angle / totalTime * (totalTime - turnTime));
-				}
-			} else {
-				foreach (GameObject cube in toRotate) {
-					cube.transform.RotateAround (origin, axis, angle / totalTime * turnTime * -1);
-				}
-			}			
-		}
-		turnTime = 0;
-	}*/
 
 	IEnumerator ResetRotations() {
 		foreach (GameObject cube in toRotate) {
